@@ -1,0 +1,139 @@
+<div class="main-wrapper">
+    <app-adminsidebar></app-adminsidebar>
+    <app-adminheader></app-adminheader>
+    <div class="page-wrapper">
+        <div class="content">
+
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"
+                                style="float: right;">&times;</button>
+
+                        </div>
+
+                        <div class="modal-body">
+
+                            <label>Reason for Rejected <span class="text-danger"> * </span>&nbsp;</label> <br>
+
+                            <input class="form-control" type="text" />
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger float-right" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary float-right"
+                                data-dismiss="modal">Submit</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal fade" id="myModal1" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"
+                                style="float: right;">&times;</button>
+
+                        </div>
+
+                        <div class="modal-body">
+
+                            <label>Leave Type <span class="text-danger"> : </span>&nbsp; ASD </label> <br>
+                            <label>Leave Start <span class="text-danger"> : </span>&nbsp; ASD </label> <br>
+                            <label>Leave End <span class="text-danger"> : </span>&nbsp; ASD </label> <br>
+                            <label>No. of Days <span class="text-danger"> : </span>&nbsp; ASD </label> <br>
+                            <label>Send To <span class="text-danger"> : </span>&nbsp; ASD </label> <br>
+                            <label>Leave Reason <span class="text-danger"> : </span>&nbsp; ASD </label> <br>
+
+                            <input class="form-control" type="text" />
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger float-right" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <h4 class="card-title d-inline-block"><b style="font-weight: 500;">Give Approval</b></h4>
+                        </div>
+                        <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                            <thead>
+                                <tr>
+                                    <th>Faculty</th>
+                                    <th>Leave Type</th>
+                                    <th>Leave Start</th>
+                                    <th>Leave End</th>
+                                    <th>Reason</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Aryan</td>
+                                    <td>asd</td>
+                                    <td>12-Dec-2022</td>
+                                    <td>12-Dec-2022</td>
+                                    <td>hello my name is devesh sheth</td>
+                                    <td><span class="pending">Pending</span></td>
+                                    <td>
+                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                                            aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item"><i class="far fa-edit"></i>&nbsp;Edit</a>
+                                            <a class="dropdown-item"><i class="fas fa-check"></i>&nbsp;Accept</a>
+                                            <a class="dropdown-item"><i class="fas fa-trash" data-toggle="modal"
+                                                    data-target="#myModal"></i>&nbsp;Reject</a>
+                                            <a class="dropdown-item" data-toggle="modal" data-target="#myModal1"><i
+                                                    class="far fa-file-alt"></i>&nbsp;Details</a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Aryan</td>
+                                    <td>asd</td>
+                                    <td>12-Dec-2022</td>
+                                    <td>12-Dec-2022</td>
+                                    <td>hello my name is devesh sheth</td>
+                                    <td><span class="pending">Pending</span></td>
+                                    <td>
+                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                                            aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item"><i class="far fa-edit"></i>&nbsp;Edit</a>
+                                            <a class="dropdown-item"><i class="fas fa-check"></i>&nbsp;Accept</a>
+                                            <a class="dropdown-item"><i class="fas fa-trash" data-toggle="modal"
+                                                    data-target="#myModal"></i>&nbsp;Reject</a>
+                                            <a class="dropdown-item" data-toggle="modal" data-target="#myModal1"><i
+                                                    class="far fa-file-alt"></i>&nbsp;Details</a>
+                                        </div>
+
+
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table><br>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

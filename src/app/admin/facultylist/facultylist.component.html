@@ -1,0 +1,91 @@
+<div class="main-wrapper">
+    <app-adminsidebar></app-adminsidebar>
+    <app-adminheader></app-adminheader>
+    <div class="page-wrapper">
+        <div class="content">
+
+           
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <h4 class="card-title d-inline-block"><b style="font-weight: 500;">Faculties</b></h4> 
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+
+                                <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Phno</th>
+                                            <th>Gender</th>
+                                            <th>Email</th>
+                                            <th>City</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Devesh</td>
+                                            <td>8545245214</td>
+                                            <td>male</td>
+                                            <td>devesh120@gmail.com</td>
+                                            <td>Ahmedabad</td>
+                                            <td>Faculty</td>
+                                            <td>
+                                                <div class="dropdown action-label">
+                                                    <a class="custom-badge status-green dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                                                        Active
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(103px, 22px, 0px);">
+                                                        <a href="#" class="dropdown-item">Active</a>
+                                                        <a href="#" class="dropdown-item">Inactive</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a routerLink="../adminedituser"> <i class="fas fa-edit" style="color: lightseagreen;"></i>
+                                                </a> | <a href=""> <i class="fas fa-trash-alt" style="color: red;"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Devesh</td>
+                                            <td>8545245214</td>
+                                            <td>male</td>
+                                            <td>devesh120@gmail.com</td>
+                                            <td>Ahmedabad</td>
+                                            <td>Faculty</td>
+                                            <td>
+                                                <div class="dropdown action-label">
+                                                    <a class="custom-badge status-green dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                                                        Active
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(103px, 22px, 0px);">
+                                                        <a href="#" class="dropdown-item">Active</a>
+                                                        <a href="#" class="dropdown-item">Inactive</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a routerLink="../adminedituser"> <i class="fas fa-edit" style="color: lightseagreen;"></i>
+                                                </a> | <a href=""> <i class="fas fa-trash-alt" style="color: red;"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                       
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

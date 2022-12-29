@@ -1,0 +1,103 @@
+<div class="main-wrapper">
+    <app-adminsidebar></app-adminsidebar>
+    <app-adminheader></app-adminheader>
+    <div class="page-wrapper">
+        <div class="content">
+
+            <form [formGroup]="myDepartmentForm" (ngSubmit)="submit()">
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title"><b style="font-weight: 500;">Department Form</b></h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <label>Department Name <span class="text-danger">*</span></label>
+                                    <input class="form-control" type="text" formControlName="departmentname">
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-toggle="modal"
+                                    data-dismiss="modal" data-target="#myModal">Close</button>
+                                <button type="submit" value="submit" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#myModal">Save</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <h4 class="card-title d-inline-block"><b style="font-weight: 500;"> Department</b></h4> <button class="btn btn-primary float-right"
+                                data-toggle="modal" data-target="#myModal">Add
+                                Department</button>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+
+                                <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Department Name</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Admin</td>
+                                            <td>
+                                                <div class="dropdown action-label">
+                                                    <a class="custom-badge status-green dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                                                        Active
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(103px, 22px, 0px);">
+                                                        <a href="#" class="dropdown-item">Active</a>
+                                                        <a href="#" class="dropdown-item">Inactive</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href=""> <i class="fas fa-edit" style="color: lightseagreen;"></i> </a> | <a href=""> <i class="fas fa-trash-alt" style="color: red;"></i> </a>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Admin</td>
+                                            <td>
+                                                <div class="dropdown action-label">
+                                                    <a class="custom-badge status-red dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                                                        InActive
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(103px, 22px, 0px);">
+                                                        <a href="#" class="dropdown-item">Active</a>
+                                                        <a href="#" class="dropdown-item">Inactive</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href=""> <i class="fas fa-edit" style="color: lightseagreen;"></i> </a> | <a href=""> <i class="fas fa-trash-alt" style="color: red;"></i> </a>
+                                            </td>
+                                        </tr>
+
+                                       
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

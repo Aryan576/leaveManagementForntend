@@ -1,0 +1,174 @@
+<div class="main-wrapper">
+    <app-stusidebar></app-stusidebar>
+    <app-stuheader></app-stuheader>
+    <div class="page-wrapper">
+        <div class="content">
+
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title d-inline-block"><b style="font-weight: 500;">Student Dashboard</b></h4>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="dash-widget">
+                            <span class="dash-widget-bg1"><i class="fas fa-file-alt" aria-hidden="true"></i></span>
+                            <div class="dash-widget-info text-right">
+                                <h3>98</h3>
+                                <span class="widget-title1">Leaves <i class="fa fa-check" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="dash-widget">
+                            <span class="dash-widget-bg2"><i class="far fa-calendar-check"></i></span>
+                            <div class="dash-widget-info text-right">
+                                <h3>1072</h3>
+                                <span class="widget-title2">Approved <i class="fa fa-check"
+                                        aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="dash-widget">
+                            <span class="dash-widget-bg3"><i class="fas fa-hourglass-half"
+                                    aria-hidden="true"></i></span>
+                            <div class="dash-widget-info text-right">
+                                <h3>72</h3>
+                                <span class="widget-title3">Pending <i class="fa fa-check"
+                                        aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="dash-widget">
+                            <span class="dash-widget-bg4"><i class="far fa-calendar-times"
+                                    aria-hidden="true"></i></span>
+                            <div class="dash-widget-info text-right">
+                                <h3>618</h3>
+                                <span class="widget-title4">Reject <i class="fa fa-check" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title d-inline-block"><b style="font-weight: 500;">Pending Leave</b></h4> <a routerLink="../stupendingleave"
+                                    class="btn btn-primary float-right">View all</a>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Leave Type</th>
+                                                <th>Leave Start</th>
+                                                <th>Leave End</th>
+                                                <th>Reason</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td>asd</td>
+                                                <td>12-Dec-2022</td>
+                                                <td>12-Dec-2022</td>
+
+                                                <td>hello my name is devesh sheth</td>
+                                                <td><span class="pending">Pending</span></td>
+                                                <td>
+                                                    <i class="fas fa-trash-alt"
+                                                        style="color: red;font-size: larger;"></i>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>asd</td>
+                                                <td>12-Dec-2022</td>
+                                                <td>12-Dec-2022</td>
+
+                                                <td>hello my name is devesh sheth</td>
+                                                <td><span class="pending">Pending</span></td>
+                                                <td>
+                                                    <i class="fas fa-trash-alt"
+                                                        style="color: red;font-size: larger;"></i>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title d-inline-block"><b style="font-weight: 500;">Approved Leave</b></h4> <a routerLink="../stuapprovedleave"
+                                    class="btn btn-primary float-right">View all</a>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Leave Type</th>
+                                                <th>Leave Start</th>
+                                                <th>Leave End</th>
+                                                <th>Reason</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>asd</td>
+                                                <td>12-Dec-2022</td>
+                                                <td>12-Dec-2022</td>
+
+                                                <td>hello my name is devesh sheth</td>
+                                                <td><span class="approve">Approved</span></td>
+                                                <td>
+                                                   <i class="fas fa-check"
+                                                            style="color: green"></i>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>asd</td>
+                                                <td>12-Dec-2022</td>
+                                                <td>12-Dec-2022</td>
+
+                                                <td>hello my name is devesh sheth</td>
+                                                <td><span class="approve">Approved</span></td>
+                                                <td>
+                                                   <i class="fas fa-check"
+                                                            style="color: green"></i>
+                                                </td>
+                                            </tr>
+
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

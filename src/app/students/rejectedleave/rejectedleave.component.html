@@ -1,0 +1,111 @@
+<div class="main-wrapper">
+    <app-stusidebar></app-stusidebar>
+    <app-stuheader></app-stuheader>
+    <div class="page-wrapper">
+        <div class="content">
+
+
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"
+                                style="float: right;">&times;</button>
+                            
+                        </div>
+                        
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label>Leave Type <span class="text-danger">:</span> asd</label><br>
+                                    <label>Leave Reason <span class="text-danger">:</span> asdasdasd</label>
+
+                                    
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger float-right" data-dismiss="modal">Close</button>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title d-inline-block"><b style="font-weight: 500;">Rejected Leave</b></h4>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-12">
+                        <div class="card">
+
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Leave Type</th>
+                                                <th>Leave Start</th>
+                                                <th>Leave End</th>
+                                                <th>Reason</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>asd</td>
+                                                <td>12-Dec-2022</td>
+                                                <td>12-Dec-2022</td>
+                                                <td>hello my name is devesh sheth</td>
+                                                <td><span class="reject">Reject</span></td>
+                                                <td>
+                                                    <a href="" data-toggle="modal" data-target="#myModal"> <i style="color: red;"><b> Reason</b></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>asd</td>
+                                                <td>12-Dec-2022</td>
+                                                <td>12-Dec-2022</td>
+                                                <td>hello my name is devesh sheth</td>
+                                                <td><span class="reject">Reject</span></td>
+                                                <td>
+                                                    <a href=""> <i style="color: red;"><b> Reason</b></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>asd</td>
+                                                <td>12-Dec-2022</td>
+                                                <td>12-Dec-2022</td>
+                                                <td>hello my name is devesh sheth</td>
+                                                <td><span class="reject">Reject</span></td>
+                                                <td>
+                                                    <a href=""> <i style="color: red;"><b> Reason</b></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

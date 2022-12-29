@@ -1,0 +1,69 @@
+<div class="main-wrapper">
+    <app-stusidebar></app-stusidebar>
+    <app-stuheader></app-stuheader>
+    <div class="page-wrapper">
+        <div class="content">
+
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title d-inline-block"><b style="font-weight: 500;">Pending Leave</b></h4>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-12">
+                        <div class="card">
+
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Leave Type</th>
+                                                <th>Leave Start</th>
+                                                <th>Leave End</th>
+                                                <th>Reason</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>asd</td>
+                                                <td>12-Dec-2022</td>
+                                                <td>12-Dec-2022</td>
+                                                <td>hello my name is devesh sheth</td>
+                                                <td><span class="pending">Pending</span></td>
+                                                <td>
+                                                    <a href=""> <i class="fas fa-edit"
+                                                            style="color: lightseagreen;"></i> </a> | <a href=""> <i
+                                                            class="fas fa-trash-alt" style="color: red;"></i> </a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>asd</td>
+                                                <td>12-Dec-2022</td>
+                                                <td>12-Dec-2022</td>
+                                                <td>hello my name is devesh sheth</td>
+                                                <td><span class="pending">Pending</span></td>
+                                                <td>
+                                                    <a href=""> <i class="fas fa-edit"
+                                                            style="color: lightseagreen;"></i> </a> | <a href=""> <i
+                                                            class="fas fa-trash-alt" style="color: red;"></i> </a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

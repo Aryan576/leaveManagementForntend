@@ -1,0 +1,72 @@
+<div class="main-wrapper">
+    <app-ctsidebar></app-ctsidebar>
+    <app-ctheader></app-ctheader>
+    <div class="page-wrapper">
+        <div class="content">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <h4 class="card-title d-inline-block"><b style="font-weight: 500;">Students</b></h4>  <a routerLink="../ctaddstudent"><button class="btn btn-primary" style="float: right;">+ ADD</button></a> &nbsp;
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">                        
+                               
+                                <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Phno</th>
+                                            <th>Gender</th>
+                                            <th>Email</th>
+                                            <th>City</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Aryan</td>
+                                            <td>8545245214</td>
+                                            <td>male</td>
+                                            <td>devesh120@gmail.com</td>
+                                            <td>Ahmedabad</td>
+                                            <td>Student</td>
+                                            <td><span class="custom-badge status-red">Inactive</span></td>
+                                            <td>
+                                                <a routerLink="../cteditstudent"> <i class="fas fa-edit"
+                                                        style="color: lightseagreen;"></i>
+                                                </a> | <a href=""> <i class="fas fa-trash-alt" style="color: red;"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Aryan</td>
+                                            <td>8545245214</td>
+                                            <th>male</th>
+                                            <td>devesh120@gmail.com</td>
+                                            <td>Ahmedabad</td>
+                                            <td>Student</td>
+                                            <td><span class="custom-badge status-green">Active</span></td>
+                                            <td>
+                                                <a href=""> <i class="fas fa-edit" style="color: lightseagreen;"></i>
+                                                </a> | <a href=""> <i class="fas fa-trash-alt" style="color: red;"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

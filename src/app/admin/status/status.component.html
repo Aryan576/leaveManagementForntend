@@ -1,0 +1,167 @@
+<div class="main-wrapper">
+    <app-adminheader></app-adminheader>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-inner slimscroll">
+            <div id="sidebar-menu" class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a routerLink="../admindashboard"><i class="fas fa-home"></i> <span>Back To Home</span></a>
+                    </li>
+
+                    <li class="menu-title">Settings</li>
+
+                    <li class="active">
+                        <a routerLink="../adminchangepassword"><i class="fas fa-lock"></i> <span>Change
+                                Password</span></a>
+                    </li>
+                    <li>
+                        <a routerLink="../adminchangerole"><i class="fas fa-user-tie"></i> <span>Change Role</span></a>
+                    </li>
+                    <li>
+                        <a routerLink="../adminstatus"><i class="far fa-calendar-check"></i> <span>Status</span></a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-wrapper">
+        <div class="content">
+
+            <form>
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title"><b>Leave Status Form</b></h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <label>Status Name <span class="text-danger">*</span></label>
+                                    <input class="form-control" type="text">
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal"
+                                    data-target="#myModal">Close</button>
+                                <button type="submit" value="submit" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#myModal">Save</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+
+
+            <form>
+                <div id="myModal1" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title"><b>User Status Form</b></h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <label>Status Name <span class="text-danger">*</span></label>
+                                    <input class="form-control" type="text">
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal"
+                                    data-target="#myModal1">Close</button>
+                                <button type="submit" value="submit" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#myModal1">Save</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <h4 class="card-title d-inline-block"><b style="font-weight: 500;">Leave Status</b></h4> <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="float: right;">+ Add</button> &nbsp;
+                        </div>
+                        <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Accept</td>
+                                    <td>
+                                        <a href=""> <i class="fas fa-trash-alt" style="color: red;"></i></a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Pending</td>
+                                    <td>
+                                        <a href=""> <i class="fas fa-trash-alt" style="color: red;"></i></a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table><br>
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="card">
+
+                        <div class="card-header"> 
+                            <h4 class="card-title d-inline-block"><b style="font-weight: 500;"> User Status</b></h4> <button class="btn btn-primary" data-toggle="modal" data-target="#myModal1" style="float: right;">+ Add</button> &nbsp;
+                        </div>
+                        <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Active</td>
+                                    <td>
+                                        <a href=""> <i class="fas fa-trash-alt" style="color: red;"></i></a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Disabled</td>
+                                    <td>
+                                        <a href=""> <i class="fas fa-trash-alt" style="color: red;"></i></a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table><br>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
