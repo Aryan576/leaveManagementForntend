@@ -25,7 +25,7 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     DataTablesModule,
     ToastrModule.forRoot({
-      timeOut: 3000, 
+      timeOut: 2000, 
       closeButton: true,
       progressBar: true,
     }),

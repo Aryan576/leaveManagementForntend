@@ -27,17 +27,21 @@ export class LoginComponent implements OnInit {
 
 
     this.login.getlogin(this.myLoginForm.value).subscribe(res=>{
-          
+
+          if(res.code !=400){
                       if (res.results[0].roleid == 6) {
                               this.rut.navigateByUrl('admindashboard')
                               this.toastr.success(res.message);
                         }else if(res.results[0].roleid == 8) {
+                          
                           this.rut.navigateByUrl('ctdashboard');
                           this.toastr.success(res.message);
+
                         }else if(res.results[0].roleid == 9){
                           
                           this.rut.navigateByUrl('facdashboard');
                           this.toastr.success(res.message);
+                        
                         }else if(res.results[0].roleid == 10){
                           
                           this.rut.navigateByUrl('studashboard');
@@ -46,7 +50,10 @@ export class LoginComponent implements OnInit {
                         
                           this.toastr.error(res.message);
                         }
-
+                      }else{
+                        this.rut.navigateByUrl('/');
+                        this.toastr.error(res.message);
+                      }
             })
     
 
