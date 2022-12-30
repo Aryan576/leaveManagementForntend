@@ -28,11 +28,15 @@ export class LoginComponent implements OnInit {
 
     this.login.getlogin(this.myLoginForm.value).subscribe(res=>{
 
-          if(res.code !=400){
-                      if (res.results[0].roleid == 6) {
+        
+        if(res.code===200){
+        
+        
+                       if (res.results[0].roleid == 6) {
                               this.rut.navigateByUrl('admindashboard')
                               this.toastr.success(res.message);
-                        }else if(res.results[0].roleid == 8) {
+                              localStorage.setItem('admin', JSON.stringify(res.results) )
+                        } else if(res.results[0].roleid == 8) {
                           
                           this.rut.navigateByUrl('ctdashboard');
                           this.toastr.success(res.message);
@@ -49,9 +53,10 @@ export class LoginComponent implements OnInit {
                         }else{
                         
                           this.toastr.error(res.message);
-                        }
+                        }  
+                      }else if(res.code === 404){
+                        this.toastr.error(res.message);
                       }else{
-                        this.rut.navigateByUrl('/');
                         this.toastr.error(res.message);
                       }
             })
