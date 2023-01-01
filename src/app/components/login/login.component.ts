@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { LoginserviceService } from '../loginservice.service';
+import { Users } from '../users';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import { LoginserviceService } from '../loginservice.service';
 })
 export class LoginComponent implements OnInit {
   myLoginForm!: FormGroup;
+  users!:Users
 
   constructor(private rut: Router,private toastr : ToastrService,private login:LoginserviceService) { }
 
@@ -33,23 +35,24 @@ export class LoginComponent implements OnInit {
         
         
                        if (res.results[0].roleid == 6) {
-                              this.rut.navigateByUrl('admindashboard')
-                              this.toastr.success(res.message);
-                              localStorage.setItem('admin', JSON.stringify(res.results) )
+                            this.rut.navigateByUrl('admindashboard')
+                            this.toastr.success(res.message);
+                            localStorage.setItem('admin',JSON.stringify(res.results))        
                         } else if(res.results[0].roleid == 8) {
                           
                           this.rut.navigateByUrl('ctdashboard');
                           this.toastr.success(res.message);
-
+                          localStorage.setItem('ct', JSON.stringify(res.results) )
                         }else if(res.results[0].roleid == 9){
                           
                           this.rut.navigateByUrl('facdashboard');
                           this.toastr.success(res.message);
-                        
+                          localStorage.setItem('ft', JSON.stringify(res.results) )
                         }else if(res.results[0].roleid == 10){
                           
                           this.rut.navigateByUrl('studashboard');
                           this.toastr.success(res.message);
+                          localStorage.setItem('students', JSON.stringify(res.results) )
                         }else{
                         
                           this.toastr.error(res.message);
