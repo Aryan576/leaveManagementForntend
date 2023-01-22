@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AdminserviceService } from '../adminservice.service';
 
 @Component({
   selector: 'app-role',
@@ -11,7 +13,10 @@ import { ToastrService } from 'ngx-toastr';
 export class RoleComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   myRoleForm!: FormGroup
-  constructor(private rut:Router,private toastr : ToastrService ) { }
+  rowss!:any[]
+  
+  constructor(private rut:Router,private toastr : ToastrService ,private admin:AdminserviceService,
+    @Inject(DOCUMENT) private _document: Document) { }
   
   ngOnInit(): void {
 
@@ -23,16 +28,36 @@ export class RoleComponent implements OnInit {
      pagingType: 'full_numbers'
   };
 
+  this.admin.getRoles().then(res=>{
+   
+      
+      
+      this.rowss= res.results.data
+      console.log("roels"+ this.rowss);
+      
+      
+      
+     
+  });
+
+
   }
 
   submit(){
     if(this.myRoleForm.valid){
-    this.toastr.success('Success!','Role Added!');
-    console.log(this.myRoleForm.value);
-    this.rut.navigateByUrl('adminrole');
+      this.admin.addRoles(this.myRoleForm.value).subscribe(res=>{
+        this.toastr.success('Success!','Role Added!');
+       
+         this.rut.navigateByUrl('adminrole');
+         window.location.reload();
+      })
+    
     }else{
       this.toastr.error('Invalid!','Enter Value in Form!');  
     }
+  }
+  refresh():void {
+    window.location.reload();
   }
 
 }

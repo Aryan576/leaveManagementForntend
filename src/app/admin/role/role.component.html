@@ -22,7 +22,7 @@
 
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal"
+                                <button type="button" (click)="refresh()" class="btn btn-danger" data-toggle="modal" data-dismiss="modal"
                                     data-target="#myModal">Close</button>
                                 <button type="submit" value="submit" class="btn btn-primary" data-toggle="modal"
                                     data-target="#myModal">Save</button>
@@ -46,7 +46,7 @@
                         <div class="card-body p-0">
                             <div class="table-responsive">
 
-                                <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                                <table *ngIf="rowss" datatable [dtOptions]="dtOptions" class="row-border hover">
                                     <thead>
                                         <tr>
                                             <th>Role Name</th>
@@ -55,8 +55,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Admin</td>
+                                    <tr *ngFor="let r of rowss">
+                                            <td> {{ r.rolename }} </td>
                                            
                                             <td>
                                                 <a href=""> <i class="fas fa-edit" style="color: lightseagreen;"></i>

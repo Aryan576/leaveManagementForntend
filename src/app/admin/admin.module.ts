@@ -20,6 +20,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { SettingsComponent } from './settings/settings.component';
 import { ChangeroleComponent } from './changerole/changerole.component';
 import { StatusComponent } from './status/status.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { StatusComponent } from './status/status.component';
     CommonModule,
     AdminRoutingModule,
     BrowserModule,
+    HttpClientModule,
     DataTablesModule,
     FormsModule,
     ReactiveFormsModule,
