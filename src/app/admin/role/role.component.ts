@@ -8,56 +8,47 @@ import { AdminserviceService } from '../adminservice.service';
 @Component({
   selector: 'app-role',
   templateUrl: './role.component.html',
-  styleUrls: ['./role.component.css']
+  styleUrls: ['./role.component.css'],
 })
 export class RoleComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
-  myRoleForm!: FormGroup
-  rowss!:any[]
-  
-  constructor(private rut:Router,private toastr : ToastrService ,private admin:AdminserviceService,
-    @Inject(DOCUMENT) private _document: Document) { }
-  
+  myRoleForm!: FormGroup;
+  rowss!: any[];
+
+  constructor(
+    private rut: Router,
+    private toastr: ToastrService,
+    private admin: AdminserviceService,
+    @Inject(DOCUMENT) private _document: Document
+  ) {}
+
   ngOnInit(): void {
+    this.myRoleForm = new FormGroup({
+      rolename: new FormControl('', Validators.required),
+    });
 
-  this.myRoleForm = new FormGroup({
-    rolename: new FormControl('', Validators.required)
-  })
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+    };
 
-  this.dtOptions = {
-     pagingType: 'full_numbers'
-  };
-
-  this.admin.getRoles().then(res=>{
-   
-      
-      
-      this.rowss= res.results.data
-      console.log("roels"+ this.rowss);
-      
-      
-      
-     
-  });
-
-
+    this.admin.getRoles().then((res) => {
+      this.rowss = res.results;
+    });
   }
 
-  submit(){
-    if(this.myRoleForm.valid){
-      this.admin.addRoles(this.myRoleForm.value).subscribe(res=>{
-        this.toastr.success('Success!','Role Added!');
-       
-         this.rut.navigateByUrl('adminrole');
-         window.location.reload();
-      })
-    
-    }else{
-      this.toastr.error('Invalid!','Enter Value in Form!');  
+  submit() {
+    if (this.myRoleForm.valid) {
+      this.admin.addRoles(this.myRoleForm.value).subscribe((res) => {
+        this.toastr.success('Success!', 'Role Added!');
+
+        this.rut.navigateByUrl('adminrole');
+        window.location.reload();
+      });
+    } else {
+      this.toastr.error('Invalid!', 'Enter Value in Form!');
     }
   }
-  refresh():void {
+  refresh(): void {
     window.location.reload();
   }
-
 }
