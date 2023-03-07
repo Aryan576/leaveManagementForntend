@@ -30,25 +30,26 @@ export class LoginComponent implements OnInit {
 
     this.login.getlogin(this.myLoginForm.value).subscribe(res=>{
 
+        console.log("user detials",res.results);
         
-        if(res.code===200){
+      if(res.code===200){
         
         
-                       if (res.results[0].roleid == 6) {
+                       if (res.results.roleid == 6) {
                             this.rut.navigateByUrl('admindashboard')
                             this.toastr.success(res.message);
                             localStorage.setItem('admin',JSON.stringify(res.results))        
-                        } else if(res.results[0].roleid == 8) {
+                        } /* else if(res.results[0].roleid == 4) {
                           
                           this.rut.navigateByUrl('ctdashboard');
                           this.toastr.success(res.message);
                           localStorage.setItem('ct', JSON.stringify(res.results) )
-                        }else if(res.results[0].roleid == 9){
+                        }else if(res.results[0].roleid == 3){
                           
                           this.rut.navigateByUrl('facdashboard');
                           this.toastr.success(res.message);
                           localStorage.setItem('ft', JSON.stringify(res.results) )
-                        }else if(res.results[0].roleid == 10){
+                        }else if(res.results[0].roleid == 5){
                           
                           this.rut.navigateByUrl('studashboard');
                           this.toastr.success(res.message);
@@ -56,12 +57,12 @@ export class LoginComponent implements OnInit {
                         }else{
                         
                           this.toastr.error(res.message);
-                        }  
+                        }   */
                       }else if(res.code === 404){
                         this.toastr.error(res.message);
                       }else{
                         this.toastr.error(res.message);
-                      }
+                      } 
             })
     
 
