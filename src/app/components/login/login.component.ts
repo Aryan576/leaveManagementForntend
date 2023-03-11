@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       if(res.code===200){
         
         
-                       if (res.results.roleid == 6) {
+                       if (res.results.roleid == 4) {
                             this.rut.navigateByUrl('admindashboard')
                             this.toastr.success(res.message);
                             localStorage.setItem('admin',JSON.stringify(res.results))        
