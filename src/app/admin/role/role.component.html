@@ -49,6 +49,7 @@
                                 <table *ngIf="rowss" datatable [dtOptions]="dtOptions" class="row-border hover">
                                     <thead>
                                         <tr>
+                                            <th>ID</th>
                                             <th>Role Name</th>
                                             
                                             <th>Action</th>
@@ -56,6 +57,7 @@
                                     </thead>
                                     <tbody>
                                     <tr *ngFor="let r of rowss">
+                                            <td>{{r.roleid}}</td>
                                             <td> {{ r.rolename }} </td>
                                            
                                             <td>

@@ -13,7 +13,7 @@ import { AdminserviceService } from '../adminservice.service';
 export class RoleComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   myRoleForm!: FormGroup;
-  rowss!: any[];
+  rowss: any={};
 
   constructor(
     private rut: Router,
@@ -33,6 +33,8 @@ export class RoleComponent implements OnInit {
 
     this.admin.getRoles().then((res) => {
       this.rowss = res.results;
+      console.log("roles"+JSON.stringify( this.rowss));
+      
     });
   }
 

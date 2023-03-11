@@ -16,18 +16,18 @@ export class AdduserComponent implements OnInit {
 
     this.myUserForm = new FormGroup({
       fullname: new FormControl('', Validators.required),
-      phno: new FormControl('', Validators.required),
-      birthdate: new FormControl('', Validators.required),
+      number: new FormControl('', Validators.required),
+      dob: new FormControl('', Validators.required),
       gender: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
-      state: new FormControl('', Validators.required),
       city: new FormControl('', Validators.required),
+      state: new FormControl('', Validators.required),
       pincode: new FormControl('', Validators.required),
       role: new FormControl('', Validators.required),
       department: new FormControl('', Validators.required),
-      status: new FormControl('', Validators.required)
+      
 
     })
 
