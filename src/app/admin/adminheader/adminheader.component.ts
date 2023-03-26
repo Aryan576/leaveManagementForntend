@@ -27,13 +27,16 @@ export class AdminheaderComponent implements OnInit {
   }; */
   result: any;
   fullname: any;
-
+  
   constructor(private rut:Router) {}
 
   ngOnInit(): void {
     this.result = localStorage.getItem('admin');
     const userdata = JSON.parse(this.result);
-    this.fullname = userdata[0].fullname;
+    console.log("adminheader",userdata.fullname);
+    
+    
+
   }
 
   onLogout(): void {

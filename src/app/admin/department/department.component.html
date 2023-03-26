@@ -16,12 +16,12 @@
 
                                 <div class="form-group">
                                     <label>Department Name <span class="text-danger">*</span></label>
-                                    <input class="form-control" type="text" formControlName="departmentname">
+                                    <input class="form-control" type="text" formControlName="deptname">
                                 </div>
 
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
+                                <button type="button" (click)="refresh()" class="btn btn-danger" data-toggle="modal"
                                     data-dismiss="modal" data-target="#myModal">Close</button>
                                 <button type="submit" value="submit" class="btn btn-primary" data-toggle="modal"
                                     data-target="#myModal">Save</button>
@@ -61,7 +61,8 @@
                                             <td>{{d.deptname}}</td>
                                             
                                             <td>
-                                                <a href=""> <i class="fas fa-edit" style="color: lightseagreen;"></i> </a> | <a href=""> <i class="fas fa-trash-alt" style="color: red;"></i> </a>
+                                                <a > <i [routerLink]="['/admindepartment/editAdminRole',d.deptid]"  data-toggle="modal" data-target="#myModal" class="fas fa-edit" style="color: lightseagreen;"></i> </a> | 
+                                                <a> <i class="fas fa-trash-alt" style="color: red;"></i> </a>
                                             </td>
                                         </tr>
 
@@ -78,3 +79,4 @@
             </div>
         </div>
     </div>
+    

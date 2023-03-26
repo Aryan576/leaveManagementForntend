@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AdminserviceService } from '../adminservice.service';
 
@@ -14,19 +14,25 @@ export class DepartmentComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   myDepartmentForm!: FormGroup;
   depet:any= {}
+ 
 
   constructor(private rut:Router,private toastr: ToastrService,
-    private admin: AdminserviceService ,@Inject(DOCUMENT) private _document: Document) { }
+    private admin: AdminserviceService,private route: ActivatedRoute) { }
   
   ngOnInit(): void {
 
     this.myDepartmentForm = new FormGroup({
-      departmentname:new FormControl('',Validators.required)
+      deptname:new FormControl('',Validators.required)
     })
     this.admin.getDepartments().then(res=>{
         this.depet=res.results
         
     })
+      
+ 
+  console.log("deptid",this.route.snapshot.params);
+  
+  
 
     this.dtOptions = {
       pagingType: 'full_numbers'
@@ -34,13 +40,17 @@ export class DepartmentComponent implements OnInit {
   }
 
   submit() {
-    if(this.myDepartmentForm.valid){
-      this.toastr.success('Success!','Department Added!');
-      console.log(this.myDepartmentForm.value);
-      this.rut.navigateByUrl('admindepartment');
-      }else{
-        this.toastr.error('Invalid!','Enter Value in Form!');  
+      if(this.myDepartmentForm.valid){
+        this.admin.addDepartments(this.myDepartmentForm.value).subscribe(res=>{
+          this.toastr.success('Success!', 'Department Added!');
+
+          this.rut.navigateByUrl('admindepartment');
+          window.location.reload();
+        })
       }
+  }
+  refresh(): void {
+    window.location.reload();
   }
 
 }

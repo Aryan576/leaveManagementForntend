@@ -13,9 +13,10 @@ export class LeaverequestComponent implements OnInit {
   constructor(private rut : Router,private toastr : ToastrService) { }
 
   ngOnInit(): void {
-
+    
     this.myLeaveForm  = new FormGroup({
     
+      
       leavetype:new FormControl('',Validators.required),
       leavefrom:new FormControl('',Validators.required),
       leaveto:new FormControl('',Validators.required),

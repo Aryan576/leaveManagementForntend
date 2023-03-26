@@ -9,12 +9,14 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h4 class="card-title d-inline-block"><b style="font-weight: 500;">Students</b></h4>  <a routerLink="../adminstuleaves"><button class="btn btn-primary" style="float: right;">Leaves</button></a> &nbsp;
+                            <h4 class="card-title d-inline-block"><b style="font-weight: 500;">Students</b></h4> <a routerLink="../adminaddstudent"><button
+                                    class="btn btn-primary float-right">Add
+                                    Students</button></a>
                         </div>
                         <div class="card-body p-0">
                             <div class="table-responsive">                        
                                
-                                <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                                <table class="row-border hover" *ngIf="adminstudents" datatable="ng" [dtOptions]="dtOptions" >
                                     <thead>
                                         <tr>
                                             <th>Name</th>
@@ -22,25 +24,25 @@
                                             <th>Gender</th>
                                             <th>Email</th>
                                             <th>City</th>
-                                            <th>Status</th>
-                                        
+                                            <th>State</th>
+                                            <th>Action</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Aryan</td>
-                                            <td>8545245214</td>
-                                            <td>male</td>
-                                            <td>devesh120@gmail.com</td>
-                                            <td>Ahmedabad</td>
+                                        <tr *ngFor="let u of adminstudents">
+                                            <td>{{u.fullname}}</td>
+                                            <td>{{u.number}}</td>
+                                            <td>{{u.gender}}</td>
+                                            <td>{{u.email}}</td>
+                                            <td>{{u.city}}</td>
+                                            <td>{{u.state}}</td>
                                            
                                             <td>
-                                                <div class="dropdown action-label">
-                                                    <a class="custom-badge status-green " href="#" aria-expanded="false">
-                                                        Active
-                                                    </a>
-                                                    
-                                                </div>
+                                                <a routerLink="../adminedituser/"> <i class="fas fa-edit"
+                                                        style="color: lightseagreen;"></i>
+                                                </a> | <a href=""> <i class="fas fa-trash-alt" style="color: red;"></i>
+                                                </a>
                                             </td>
                                             
                                         </tr>

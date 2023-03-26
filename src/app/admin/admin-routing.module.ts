@@ -8,6 +8,8 @@ import { GiveapprovalComponent } from './giveapproval/giveapproval.component';
 import { RoleComponent } from './role/role.component';
 import { SettingsComponent } from './settings/settings.component';
 import { StatusComponent } from './status/status.component';
+import { AdminaddstudentComponent } from './student/adminaddstudent/adminaddstudent.component';
+
 import { StudentComponent } from './student/student.component';
 import { StuleavesComponent } from './stuleaves/stuleaves.component';
 import { AdduserComponent } from './users/adduser/adduser.component';
@@ -16,8 +18,15 @@ import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   { path: 'admindashboard', component: DashboardComponent },
-  { path: 'admindepartment', component: DepartmentComponent },
-  { path: 'adminrole', component: RoleComponent },
+  { path: 'admindepartment', component: DepartmentComponent,children:[
+    
+    {path:'editAdminDepartment/:deptid',component:DepartmentComponent},
+  ] },
+ 
+  { path: 'adminrole', component: RoleComponent,children:[
+
+  ] },
+ 
   {
     path: 'adminusers', component: UsersComponent, children: [
       // {path:'adminadduser',component:AdduserComponent},
@@ -29,6 +38,9 @@ const routes: Routes = [
   { path: 'adminadduser', component: AdduserComponent },
   { path: 'adminedituser', component: EdituserComponent },
   { path: 'adminstudent', component: StudentComponent },
+  {path: 'adminaddstudent',component:AdminaddstudentComponent},
+  
+  
 
   { path: 'adminstuleaves', component: StuleavesComponent },
   { path: 'adminsettings', component: SettingsComponent },

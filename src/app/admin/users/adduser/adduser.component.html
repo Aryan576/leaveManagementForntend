@@ -1,6 +1,7 @@
 <div class="main-wrapper">
     <app-adminsidebar></app-adminsidebar>
     <app-adminheader></app-adminheader>
+    
     <div class="page-wrapper">
         <div class="content">
             <div class="row">
@@ -103,11 +104,11 @@
                                             <div class="form-group">
                                                 <label>Role <span class="text-danger">*</span></label>
 
-                                                <select class="form-control" formControlName="role">
-                                                    <option>-- Select --</option>
-                                                    <option>Admin</option>
-                                                    <option>Faculty</option>
-                                                    <option>Class Teacher</option>
+                                                <select class="form-control" formControlName="roleid">
+                                                    <option>-- Select Role --</option>
+                                                    <option *ngFor="let u of admirole" value="{{u.roleid}}">{{u.rolename}}</option>
+
+                                                   
                                                     
                                                 </select>
                                             </div>
@@ -120,28 +121,14 @@
                                             <div class="form-group">
                                                 <label>Department <span class="text-danger">*</span></label>
 
-                                                <select class="form-control" formControlName="department">
+                                                <select class="form-control" formControlName="deptid">
                                                     <option>-- Select --</option>
-                                                    <option>Option 1</option>
-                                                    <option>Option 2</option>
-                                                    <option>Option 3</option>
+                                                    <option *ngFor="let u of admidept" value="{{u.deptid}}">{{u.deptname}}</option>
 
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Status <span class="text-danger">*</span></label>
-
-                                                <select class="form-control" formControlName="status">
-                                                    <option>-- Select --</option>
-                                                    <option>Active</option>
-                                                    <option>Hold</option>
-                                                    <option>Inactive</option>
-
-                                                </select>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
 
                                 

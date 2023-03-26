@@ -21,6 +21,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { ChangeroleComponent } from './changerole/changerole.component';
 import { StatusComponent } from './status/status.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminaddstudentComponent } from './student/adminaddstudent/adminaddstudent.component';
+
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { HttpClientModule } from '@angular/common/http';
     StuleavesComponent,
     SettingsComponent,
     ChangeroleComponent,
-    StatusComponent
+    StatusComponent,
+    AdminaddstudentComponent,
+    
   ],
   imports: [
     CommonModule,

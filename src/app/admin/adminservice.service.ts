@@ -26,4 +26,18 @@ export class AdminserviceService {
   getadminUsers():Promise<any>{
     return this.http.get(`${environment.BASE_URL}user/userList`).toPromise()
   }
+   addUsers(model:any):Observable<any>{
+    return this.http.post(`${environment.BASE_URL}user/userSignup`,model)
+   } 
+   addStudent(model:any):Observable<any>{
+    return this.http.post(`${environment.BASE_URL}students/addStudents`,model)
+   }
+
+  getStudents():Promise<any>{
+    return this.http.get(`${environment.BASE_URL}students/getStudent`).toPromise()
+  }
+
+  updateDepartment(model : any):Observable<any> {
+    return this.http.put(`${environment.BASE_URL}department/updateDepartment`,model);
+    }
 }

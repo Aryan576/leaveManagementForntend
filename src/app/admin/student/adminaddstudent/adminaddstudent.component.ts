@@ -5,25 +5,26 @@ import { ToastrService } from 'ngx-toastr';
 import { AdminserviceService } from '../../adminservice.service';
 
 @Component({
-  selector: 'app-adduser',
-  templateUrl: './adduser.component.html',
-  styleUrls: ['./adduser.component.css']
+  selector: 'app-adminaddstudent',
+  templateUrl: './adminaddstudent.component.html',
+  styleUrls: ['./adminaddstudent.component.css']
 })
-export class AdduserComponent implements OnInit {
-  myUserForm!: FormGroup;
+export class AdminaddstudentComponent implements OnInit {
+
+  myStudentForm!: FormGroup;
   admirole:any={}
   admidept:any={}
   constructor(private rut: Router, private toastr: ToastrService,private admin:AdminserviceService) { }
 
   ngOnInit(): void {
-      this.admin.getRoles().then(roles=>{
-        this.admirole=roles.results
-      })
-      this.admin.getDepartments().then(dept=>{
-        this.admidept=dept.results
-      })
 
-    this.myUserForm = new FormGroup({
+    this.admin.getRoles().then(roles=>{
+      this.admirole=roles.results
+    })
+    this.admin.getDepartments().then(dept=>{
+      this.admidept=dept.results
+    })
+    this.myStudentForm = new FormGroup({
       fullname: new FormControl('', Validators.required),
       number: new FormControl('', Validators.required),
       dob: new FormControl('', Validators.required),
@@ -34,6 +35,8 @@ export class AdduserComponent implements OnInit {
       city: new FormControl('', Validators.required),
       state: new FormControl('', Validators.required),
       pincode: new FormControl('', Validators.required),
+      semester: new FormControl('', Validators.required),
+      enrollmentno: new FormControl('', Validators.required),
       roleid: new FormControl('', Validators.required),
       deptid: new FormControl('', Validators.required),
       
@@ -43,24 +46,24 @@ export class AdduserComponent implements OnInit {
   }
 
   submit() {
-    if (this.myUserForm.valid) {
-
-      this.admin.addUsers(this.myUserForm.value).subscribe(res=>{
-        if(res.code == 200){
-          console.log(this.myUserForm.value);
-      
-          this.toastr.success('Success!', 'User Added!');
-          this.rut.navigateByUrl('adminusers');
-        }else{
+    if (this.myStudentForm.valid) {
+     
+      this.admin.addStudent(this.myStudentForm.value).subscribe(res=>{
+        if(res.code==200){
+          this.toastr.success('Success!', 'Student Added!');
+          this.rut.navigateByUrl('adminstudent');
+        }else if(res.code==409){
+          this.toastr.warning('Student Already Exists', res.message);
+        }
+        else{
           this.toastr.error(res.message);
         }
       })
-      
+     
     } else {
       this.toastr.error('Invalid!', 'Enter Value in Form!');
     }
 
   }
+
 }
-
-

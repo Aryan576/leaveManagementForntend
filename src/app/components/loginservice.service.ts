@@ -12,4 +12,7 @@ export class LoginserviceService {
   getlogin(model:any): Observable<any>{
     return this.http.post(`${environment.BASE_URL}user/userLogin`,model)
   }
+  studentLogin(model:any): Observable<any>{
+    return this.http.post(`${environment.BASE_URL}students/studentsLogin`,model)
+  }
 }
