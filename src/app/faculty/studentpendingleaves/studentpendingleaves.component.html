@@ -1,0 +1,67 @@
+<div class="main-wrapper">
+    <app-facultysidebar></app-facultysidebar>
+    <app-facultyheader></app-facultyheader>
+    <div class="page-wrapper">
+      <div class="content">
+  
+          <div class="row">
+              <div class="col-12 col-md-6 col-lg-4 col-xl-12">
+                  <div class="card">
+                      <div class="card-header">
+                          <h4 class="card-title d-inline-block"><b style="font-weight: 500;">Pending Leave</b></h4> <a routerLink="../facleavestatus"
+                              class="btn btn-primary float-right">View all</a>
+                      </div>
+                      <div class="card-body p-0">
+                          <div class="table-responsive">
+                              <table *ngIf="leaves" datatable [dtOptions]="dtOptions" class="row-border hover">
+                                  <thead>
+                                      <tr>
+                                        <th>Student Name</th>
+                                          <th>Leave Type</th>
+                                          <th>Leave Start</th>
+                                          <th>Leave End</th>
+                                          <th>Reason</th>
+                                          <th>Status</th>
+                                          <th>Action</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+  
+                                      <tr *ngFor="let u of leaves">
+                                        <td>{{u.student.fullname}} </td>
+                                          <td>{{u.leavetype}}</td>
+                                          <td>{{u.leavefrom}}</td>
+                                          <td>{{u.leaveto}}</td>
+  
+                                          <td>{{u.leavereason}}</td>
+                                          <td><span class="pending">Pending</span></td>
+                                          <td>
+                                            <div class="dropdown-container" tabindex="-1">
+                                                <div class="three-dots"></div>
+                                                <div class="dropdown">
+                                                  <a (click)="accept(u.leaveid)" class="a1">Accept</a><br>
+                                                  <a (click)="reject(u.leaveid)" class="r1">Reject</a>
+                                                  
+                                                </div>
+                                              </div>
+                                      </tr>
+  
+                                     
+  
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+          </div>
+  
+  
+  
+  
+  
+      </div>
+    </div>
+  </div>
+  

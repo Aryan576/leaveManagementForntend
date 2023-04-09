@@ -1,0 +1,57 @@
+<div class="main-wrapper">
+    <app-facultysidebar></app-facultysidebar>
+    <app-facultyheader></app-facultyheader>
+    <div class="page-wrapper">
+      <div class="content">
+  
+          <div class="row">
+              <div class="col-12 col-md-6 col-lg-4 col-xl-12">
+                  <div class="card">
+                      <div class="card-header">
+                          <h4 class="card-title d-inline-block"><b style="font-weight: 500;">Rejected Leave</b></h4> 
+                      </div>
+                      <div class="card-body p-0">
+                          <div class="table-responsive">
+                              <table *ngIf="rejectedleaves" datatable [dtOptions]="dtOptions"  class="row-border hover">
+                                  <thead>
+                                      <tr>
+                                            <th>Name</th>
+                                          <th>Leave Type</th>
+                                          <th>Leave Start</th>
+                                          <th>Leave End</th>
+                                          <th>Reason</th>
+                                          <th>Status</th>
+                                          
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+  
+                                      <tr *ngFor="let u of rejectedleaves">
+                                            <td>{{u.student.fullname}}</td>
+                                          <td>{{u.leavetype}}</td>
+                                          <td>{{u.leavefrom}}</td>
+                                          <td>{{u.leaveto}}</td>
+                                          <td>{{u.leavereason}}</td>
+                                          <td><span class="rejected">Rejected </span></td>
+                                          
+                                      </tr>
+  
+                                      
+  
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+          </div>
+  
+  
+  
+  
+  
+      </div>
+    </div>
+  </div>
+  

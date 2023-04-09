@@ -43,22 +43,12 @@ export class LoginComponent implements OnInit {
           this.rut.navigateByUrl('admindashboard');
           this.toastr.success(res.message);
           localStorage.setItem('admin', JSON.stringify(res.results));
-        } else if (res.results.roleid == 4) {
-          this.rut.navigateByUrl('ctdashboard');
-          this.toastr.success(res.message);
-          localStorage.setItem('ct', JSON.stringify(res.results));
-        } else if (res.results.roleid == 3) {
+        } else {
           this.rut.navigateByUrl('facdashboard');
           this.toastr.success(res.message);
           localStorage.setItem('ft', JSON.stringify(res.results));
-        } else {
-          this.toastr.error(res.message);
         }
-      } else if (res.code === 404) {
-        this.toastr.error(res.message);
-      } else {
-        this.toastr.error(res.message);
-      }
+      } 
     });
   }
 

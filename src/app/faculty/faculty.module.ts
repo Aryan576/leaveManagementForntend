@@ -9,6 +9,9 @@ import { FacultysidebarComponent } from './facultysidebar/facultysidebar.compone
 import { LeavestatusComponent } from './leavestatus/leavestatus.component';
 import { DataTablesModule } from 'angular-datatables';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StudentapproveleavesComponent } from './studentapproveleaves/studentapproveleaves.component';
+import { StudentrejectedleavesComponent } from './studentrejectedleaves/studentrejectedleaves.component';
+import { StudentpendingleavesComponent } from './studentpendingleaves/studentpendingleaves.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LeaverequestComponent,
     FacultyheaderComponent,
     FacultysidebarComponent,
-    LeavestatusComponent
+    LeavestatusComponent,
+    StudentapproveleavesComponent,
+    StudentrejectedleavesComponent,
+    StudentpendingleavesComponent
   ],
   imports: [
     CommonModule,
